@@ -1,16 +1,14 @@
 ## Socially Camera App
-Meteor 1.6
-
-Angular 4.4.6
-
-Angular Material: 2.0.0-beta.12
+Meteor 1.6                          - 
+Angular 4.4.6                       - 
+Angular Material 2.0.0-beta.12      - 
 
 Cordova:
-    cordova-plugin-camera@2.4.1
-    cordova-plugin-device@1.1.6
-    cordova-plugin-inappbrowser@1.7.1
-    cordova-plugin-splashscreen@4.0.3
-    cordova-plugin-statusbar@2.2.3
+    cordova-plugin-camera@2.4.1         - 
+    cordova-plugin-device@1.1.6         - 
+    cordova-plugin-inappbrowser@1.7.1   - 
+    cordova-plugin-splashscreen@4.0.3   - 
+    cordova-plugin-statusbar@2.2.3      - 
 
 App was derived from https://angular-meteor.com/tutorials/socially/angular2/3rd-party-libraries
 

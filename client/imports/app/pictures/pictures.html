@@ -1,0 +1,23 @@
+
+<md-card class="example-card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image md-card-image1"></div>
+      Take da Picture: &nbsp; &nbsp;
+      <mat-icon class="font-40" (click)="takeDaPicture()">photo_camera</mat-icon>
+  </md-card-header>
+
+  <br />  {{tookPicture}} <br />
+
+  <md-card-header>
+    <div md-card-avatar class="example-header-image md-card-image1"></div>
+      Show picture from S3 &nbsp; &nbsp;  <mat-icon class="font-40" (click)="showS3Picture()">picture_in_picture</mat-icon>
+  </md-card-header>
+  
+  <p> {{S3PicturePath}} </p>
+  
+  <img src="{{S3PicturePath}}"> 
+  
+</md-card>
+
+
+

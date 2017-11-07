@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <a routerLink="/" class="toolbar-title">Socially2</a>
+  <span class="fill-remaining-space"></span>
+
+  <a mat-button [routerLink]="['/pictures']">Pics</a>
+
+  <div [hidden]="user">
+    <a mat-button [routerLink]="['/login']" >Login</a>
+    <a mat-button [routerLink]="['/signup']">Sign up</a>
+  </div>
+  <div [hidden]="!user">
+    <span>{{ user | displayName }}</span>
+    <button mat-button (click)="logout()">Logout</button>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

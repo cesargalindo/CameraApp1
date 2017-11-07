@@ -1,0 +1,33 @@
+<div class="md-content" layout="row" layout-align="center start" layout-fill layout-margin>
+  <div layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
+    <mat-toolbar class="md-primary" color="primary">
+      Recover Your Password
+    </mat-toolbar>
+
+    <div layout="column" layout-fill layout-margin layout-padding>
+      <form [formGroup]="recoverForm" #f="ngForm" (ngSubmit)="recover()"
+            layout="column" layout-fill layout-padding layout-margin>
+
+        <mat-input-container>
+          <input matInput formControlName="email" type="email" placeholder="Email"></input>
+        </mat-input-container>
+
+        <div layout="row" layout-align="space-between center">
+          <button mat-raised-button class="md-primary" type="submit" aria-label="Recover">Recover</button>
+        </div>
+      </form>
+
+      <div [hidden]="error == ''">
+        <mat-toolbar class="md-warn" layout="row" layout-fill layout-padding layout-margin>
+          <p class="md-body-1">{{ error }}</p>
+        </mat-toolbar>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div layout="row" layout-align="center">
+        <a mat-button [routerLink]="['/login']">Remember your password?</a>
+      </div>
+    </div>
+  </div>
+</div>

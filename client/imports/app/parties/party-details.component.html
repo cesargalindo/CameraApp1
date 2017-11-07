@@ -1,0 +1,68 @@
+<div class="party-details-container" *ngIf="party">
+  <div class="row">
+    <div class="party-details">
+      <mat-card>
+        <h2>{{ party.name }}</h2>
+        <form layout="column" (submit)="saveParty()">
+          <label>Party Name: </label>
+          <mat-input-container>
+            <input matInput [disabled]="!isOwner" [(ngModel)]="party.name" name="name"></input>
+          </mat-input-container>
+
+          <br />
+
+          <label>Party Description: </label>
+          <mat-input-container>
+            <input matInput [disabled]="!isOwner" [(ngModel)]="party.description" name="description"></input>
+          </mat-input-container>
+
+          <br />
+
+          <label>Location name: </label>
+          <mat-input-container>
+            <input matInput [disabled]="!isOwner" [(ngModel)]="party.location.name" name="location"></input>
+          </mat-input-container>
+
+          <br />
+
+          <mat-checkbox [disabled]="!isOwner" [(checked)]="party.public" name="public" aria-label="Public">
+            Public party?
+          </mat-checkbox>
+
+          <div layout="row" layout-align="left">
+            <button [disabled]="!isOwner" type="submit" mat-raised-button color="accent">Save</button>
+            <a [routerLink]="['/']" mat-raised-button class="md-raised">Back</a>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+    <div class="party-invites">
+      <mat-card>
+        <h2>Invitations</h2>
+        <span [hidden]="!party.public">Public party, no need for invitations!</span>
+        <mat-list>
+          <mat-list-item *ngFor="let user of users | async">
+            <div>{{ user | displayName }}</div>
+            <button (click)="invite(user)" mat-raised-button>Invite</button>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div class="party-map">
+      <mat-card>
+        <h2>Party location</h2>
+        <sebm-google-map
+          [latitude]="lat || centerLat"
+          [longitude]="lng || centerLng"
+          [zoom]="8"
+          (mapClick)="mapClicked($event)">
+          <sebm-google-map-marker
+            *ngIf="lat && lng"
+            [latitude]="lat"
+            [longitude]="lng">
+          </sebm-google-map-marker>
+        </sebm-google-map>
+      </mat-card>
+    </div>
+  </div>
+</div>

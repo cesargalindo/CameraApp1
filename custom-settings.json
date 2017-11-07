@@ -1,0 +1,14 @@
+{
+
+  "public": {
+    "AWS_IMAGE_PATH": "https://s3-us-west-2.amazonaws.com/YOUR-PUBLIC-BUCKET/"  
+  },
+
+  "AWSAccessKeyId": "YOUR-KEY",
+  "AWSSecretAccessKey": "YOUR-SECRET",
+  "SessionToken": "credentials.sessionToken",
+  "S3Bucket": "YOUR-PUBLIC-BUCKET",
+  "AWSRegion": "us-west-2"
+
+}
+
